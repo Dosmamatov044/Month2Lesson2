@@ -9,7 +9,7 @@ interface UnsplashApi {
 
     @Headers("Content-Type: application/json;charset=utf-8")
     @GET("/photos")
-    suspend fun getImages(@Query("client_id")  API_KEY:String):Response<MyModel>
+    suspend fun getImages(@Query("client_id")  API_KEY:String,@Query("page") page:Int,@Query("order_by") sort:String):Response<MyModel>
 
 
 }

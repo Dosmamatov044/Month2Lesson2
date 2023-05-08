@@ -10,8 +10,7 @@ import java.util.concurrent.TimeUnit
 
 class MyApp:Application() {
  private lateinit var retrofit: Retrofit
-
-    override fun onCreate() {
+        override fun onCreate() {
         super.onCreate()
 
         val logger=HttpLoggingInterceptor()
@@ -24,18 +23,13 @@ class MyApp:Application() {
 
 
 
+
         retrofit=Retrofit.Builder().baseUrl(Constants.BASE_URL).client(okHttpClient).addConverterFactory(GsonConverterFactory.create()).build()
 
         api=retrofit.create(UnsplashApi::class.java)
-
-
-    }
-
-    companion object{
-
+    }companion object{
         var api:UnsplashApi?=null
         private set
-
     }
 
 
